@@ -10,15 +10,46 @@
       <a href="#contact">-Placeholder-</a>
       <a href="#about">-Placeholder-</a>
       <br />
-      <input />
-      <input />
-      <button>Loggin</button>
+      <div id="loginContent" style="color: aliceblue;">
+        <!--
+            
+            <input type="text" id="username" value="Name" /> <input type="password" id="userPassword" value="Password" />
+            <input  id="loginUser" type="submit" value="Login"></input>
+          -->
+      </div>
     </div>
-
-    <div style="padding-left: 16px;">
-      <h2>Movies!</h2>
-      <p>Some movie content..</p>
+    <div class="movieRow">
+      <div id="moviePageContent" class="movieColumn"></div>
     </div>
   </body>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .movieColumn {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .movieRow::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .h5 {
+      opacity: 5;
+    }
+    .titleLinq {
+      transition-duration: 0.7s;
+    }
+    .titleLinq:hover {
+      box-shadow: 0 20px 50px 0 rgb(100, 0, 0), 0 13px 50px 0 rgba(255, 0, 0);
+    }
+  </style>
+  <script src="MovieScript.js"></script>
   <script src="Script.js"></script>
 </html>

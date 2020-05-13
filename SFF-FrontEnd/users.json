@@ -1,0 +1,17 @@
+[
+  {
+    "userName": "Jesus Kristus",
+    "userLogin": "jesus",
+    "userPassword": "123"
+  },
+  {
+    "userName": "Ragnar Svensson",
+    "userLogin": "ragnar",
+    "userPassword": "321"
+  },
+  {
+    "userName": "Conny Cut",
+    "userLogin": "conny",
+    "userPassword": "asd"
+  }
+]

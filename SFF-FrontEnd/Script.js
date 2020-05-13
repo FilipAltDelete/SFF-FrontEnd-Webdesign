@@ -1,8 +1,6 @@
 console.log("† Jesus Kristus, vår frälsare †");
 console.log(localStorage.getItem("userId"));
 
-var user = "Jesus";
-var pass = "123";
 var getUser = "";
 var getPass = "";
 
@@ -25,23 +23,44 @@ function showLoginPage() {
     getUser = document.getElementById("username").value;
     getPass = document.getElementById("userPassword").value;
 
-    if (getUser == user && getPass == pass) {
-      console.log("Ja det stämmer");
+    fetch("https://localhost:5001/api/FilmStudio")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(json);
 
-      localStorage.setItem("userId", getUser);
-      console.log(localStorage.getItem("userId"));
+        for (let i = 0; i < json.length; i++) {
+          if (getUser == json[i].name && getPass == json[i].password) {
+            console.log("Rätt");
+            localStorage.setItem("userId", i);
+          }
+        }
 
-      showWelcomePage(getUser);
-    } else {
-      console.log("nej, fel");
-      showErrorPage();
-    }
+        if (localStorage.getItem("userId") != null) {
+          showWelcomePage(getUser);
+        } else {
+          showErrorPage();
+        }
+      });
   });
 }
 
 function showWelcomePage(getUser) {
   loginPage.innerHTML = "<button id='signout'>Logout</button>";
-  mainPage.innerHTML = "Welcome " + getUser;
+  //mainPage.innerHTML = "Welcome " + getUser;
+
+  var print = "Welcome ";
+
+  fetch("https://localhost:5001/api/FilmStudio")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      print = print + json[localStorage.getItem("userId")].name;
+      mainPage.innerHTML = print;
+    });
+
   var logoutButton = document.getElementById("signout");
 
   logoutButton.addEventListener("click", function () {
