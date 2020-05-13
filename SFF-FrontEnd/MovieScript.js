@@ -31,36 +31,7 @@ function buildList(data) {
     containerDiv.appendChild(newDiv);
   });
 }
-/*
-
-function buildList(data) {
-  document.getElementById("moviePageContent").innerHTML = "";
-  data.forEach((element) => {
-    var img = document.createElement("img");
-    img.src = "/Images/StockMovieImg.jpg";
-  });
-}
-*/
 
 fetch("https://localhost:5001/api/Film")
   .then((response) => response.json())
   .then((data) => buildList(data));
-
-/*
-function printMovies() {
-  var printTitle = "Movie title: ";
-  var printStock = "In Stock: ";
-  var printImage;
-
-  fetch("https://localhost:5001/api/Film")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      for (let i = 0; i < json.length; i++) {
-        printTitle = printTitle + json.name;
-        moviePage.innerHTML = printTitle;
-      }
-    });
-}
-*/

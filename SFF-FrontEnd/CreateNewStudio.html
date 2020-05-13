@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a href="/Index.html" class="active">Home</a>
+      <a href="/Movies.html">Movies</a>
+      <a href="/CreateNewStudio.html">Create new account</a>
+      <a href="#about">-Placeholder-</a>
+
+      <br />
+      <div id="loginContent" style="color: aliceblue;"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div id="mainPageContent"></div>
+    <div style="padding-left: 16px;">
+      Studio Name: <br /><br /><input type="text" id="newUsername" /> <br />
+      Password : <br /><br /><input type="text" id="newPassword" /> <br />
+      Verify password : <br /><br /><input
+        type="text"
+        id="newVerifiedPassword"
+      />
+      <br /><br />
+      <input onclick="createNewStudio()" type="submit" value="Sign Up" />
+      <br />
+    </div>
+  </body>
+  <!--<script src="Script.js"></script>-->
+  <script src="newAccountScript.js"></script>
+</html>
