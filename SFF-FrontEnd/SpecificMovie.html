@@ -12,38 +12,15 @@
       <br />
       <div id="loginContent" style="color: aliceblue;"></div>
     </div>
-    <div class="row">
-      <div id="moviePageContent"></div>
-    </div>
+    <div id="selectedMovieDiv" class="movieColumn"></div>
   </body>
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     .movieColumn {
       float: left;
       width: 20%;
       padding: 30px;
     }
-
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-    .h5 {
-      opacity: 5;
-    }
-    .titleLinq {
-      transition-duration: 0.7s;
-    }
-    .titleLinq:hover {
-      box-shadow: 0 20px 50px 0 rgb(100, 0, 0), 0 13px 50px 0 rgba(255, 0, 0);
-    }
   </style>
   <script src="Scripts/Script.js"></script>
-  <script src="Scripts/MovieScript.js"></script>
+  <script src="Scripts/SelectedMovieScript.js"></script>
 </html>

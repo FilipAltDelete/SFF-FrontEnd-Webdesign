@@ -15,13 +15,6 @@ if (localStorage.getItem("userId") != null) {
 }
 
 function showLoginPage() {
-  navbar.insertAdjacentHTML(
-    "afterbegin",
-    '<div class="topnav"><a href="/Index.html" class="active">Home</a><a href="/Movies.html">Movies</a> <a href="/CreateNewStudio.html">Create new account</a><a href="#about">-Placeholder-</a><br/><input type="text" id="username" value="Name" /> <input type="password" id="userPassword" value="Password" /><input  id="loginUser" type="submit" value="Login"></input></div>'
-  );
-
-  //    <input type="text" id="username" value="Name" /> <input type="password" id="userPassword" value="Password" /><input  id="loginUser" type="submit" value="Login"></input>
-
   loginPage.innerHTML =
     "<input type='text' id='username' value='Name' /> <input type='password' id='userPassword' value='Password' /><input  id='loginUser' type='submit' value='Login'></input>";
   mainPage.innerHTML = "SFF!";
