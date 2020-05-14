@@ -1,3 +1,7 @@
+if (localStorage.getItem("userId") != null) {
+  showButtons();
+}
+
 async function getDataAsync(url) {
   let response = await fetch(url);
   let data = await response.json();
@@ -24,6 +28,11 @@ function buildList(data) {
         ")'><img class='titleLinq' style='height: 100px; widht: 100px' src='Images/StockMovieImg.jpg'><a/>";
     }
   });
+}
+
+function showButtons() {
+  document.getElementById("Buttons").innerHTML =
+    '<button id="rentButton" class="rentButton">Rent</button><br></br><button id="returnButton" class="returnButton">Return</button><br></br><button id="addTrivia" class="triviaButton">Add Trivia</button>';
 }
 
 fetch("https://localhost:5001/api/Film")

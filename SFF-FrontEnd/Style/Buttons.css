@@ -1,0 +1,55 @@
+.rentButton {
+  background-color: #637afa;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 150px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.rentButton:hover {
+  box-shadow: 0 12px 16px 0 rgb(0, 117, 250), 0 17px 50px 0 rgb(0, 117, 250);
+}
+.returnButton {
+  background-color: #fa6363;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 150px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.returnButton:hover {
+  box-shadow: 0 12px 16px 0 rgb(220, 20, 60), 0 17px 50px 0 rgba(220, 20, 60);
+}
+.triviaButton {
+  background-color: #fad763;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 150px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.triviaButton:hover {
+  box-shadow: 0 12px 16px 0 rgb(255, 255, 102),
+    0 17px 50px 0 rgba(255, 255, 102);
+}

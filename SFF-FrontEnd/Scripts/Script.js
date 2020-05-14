@@ -16,7 +16,7 @@ if (localStorage.getItem("userId") != null) {
 
 function showLoginPage() {
   loginPage.innerHTML =
-    "<input type='text' id='username' value='Name' /> <input type='password' id='userPassword' value='Password' /><input  id='loginUser' type='submit' value='Login'></input>";
+    "<input type='text' id='username' placeholder='Name' /> <input type='password' id='userPassword' placeholder='Password' /><input  id='loginUser' type='submit' value='Login'></input>";
   mainPage.innerHTML = "SFF!";
 
   var logginButton = document.getElementById("loginUser");
@@ -65,11 +65,12 @@ function showWelcomePage(getUser) {
   var logoutButton = document.getElementById("signout");
 
   logoutButton.addEventListener("click", function () {
+    window.location.href = "Index.html";
     localStorage.removeItem("userId");
     showLoginPage();
   });
 }
 
 function showErrorPage() {
-  mainPage.innerHTML = "<div>Password was wrong!</div>";
+  mainPage.innerHTML = "<div>Something went wrong!</div>";
 }

@@ -28,7 +28,7 @@ function buildList(data) {
       element.stock +
       "<br/> <a onclick='onMovieClicked(" +
       element.id +
-      ")'><img class='titleLinq' style='height: 100px; widht: 100px' src='Images/StockMovieImg.jpg'><a/>";
+      ")'><img class='picture' style='height: 100px; widht: 100px' src='Images/StockMovieImg.jpg'><a/>";
     console.log(element.name);
     var containerDiv = document.getElementById("moviePageContent");
     containerDiv.appendChild(newDiv);

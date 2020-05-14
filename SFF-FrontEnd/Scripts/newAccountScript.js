@@ -18,7 +18,7 @@ function createNewStudio() {
     const data = JSON.stringify(jsonObject);
     postNewStudio(data);
   } else {
-    console.log("if false!!");
+    console.log("if-statement false!");
   }
 }
 
