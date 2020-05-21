@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="Style/Style.css" />
+    <link rel="stylesheet" href="Style/Buttons.css" />
   </head>
 
   <body>
@@ -13,8 +14,9 @@
       <div id="loginContent" style="color: aliceblue;"></div>
     </div>
     <div class="row">
-      <div id="moviePageContent"></div>
+      <div id="rentedMovies"></div>
     </div>
+    <!--<h2 id="mainPageContent"></h2>-->
   </body>
 
   <style>
@@ -22,7 +24,7 @@
       box-sizing: border-box;
     }
 
-    .movieColumn {
+    .rentedMovieColumn {
       float: left;
       width: 20%;
       padding: 30px;
@@ -44,6 +46,6 @@
       box-shadow: 0 20px 50px 0 rgb(100, 0, 0), 0 13px 50px 0 rgba(255, 0, 0);
     }
   </style>
+  <script src="Scripts/RentedMovieScript.js"></script>
   <script src="Scripts/Script.js"></script>
-  <script src="Scripts/MovieScript.js"></script>
 </html>

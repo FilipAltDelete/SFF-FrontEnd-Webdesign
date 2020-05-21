@@ -58,8 +58,11 @@ function showWelcomePage(getUser) {
       return response.json();
     })
     .then(function (json) {
-      print = print + json[localStorage.getItem("userId")].name;
+      var user = json[localStorage.getItem("userId")].name;
+      print = print + user;
       mainPage.innerHTML = print;
+      document.getElementById("loggedInStudio").innerHTML =
+        '<a id="loggedInStuido" href="/LoggedInStudio.html">' + user + "</a>";
     });
 
   var logoutButton = document.getElementById("signout");
