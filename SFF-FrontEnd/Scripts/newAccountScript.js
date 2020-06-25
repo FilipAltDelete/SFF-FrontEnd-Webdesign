@@ -29,6 +29,7 @@ async function postNewStudio(data) {
       alert(this.responseText);
     }
   };
+  console.log(data);
   xhttp.open("POST", "https://localhost:5001/api/FilmStudio", true);
   xhttp.setRequestHeader("Content-Type", "application/json");
   xhttp.send(data);

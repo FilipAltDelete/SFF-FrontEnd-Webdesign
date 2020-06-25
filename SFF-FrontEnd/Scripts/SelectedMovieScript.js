@@ -35,6 +35,10 @@ function showButtons() {
     '<button id="rentButton" class="rentButton" onclick="rentMovie()">Rent</button><br><br/><button id="addTrivia" class="triviaButton" onclick="addTrivia()">Add Trivia</button>';
 }
 
+function updateSite() {
+  location.href = "/Movies.html";
+}
+
 function rentMovie() {
   var movieId = parseInt(localStorage.getItem("MovieId"));
   var studio = parseInt(localStorage.getItem("userId")) + 1;

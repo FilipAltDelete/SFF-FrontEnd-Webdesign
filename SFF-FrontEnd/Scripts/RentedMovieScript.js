@@ -1,6 +1,8 @@
-fetch("https://localhost:5001/api/RentedFilm")
-  .then((response) => response.json())
-  .then((data) => getRentedMovies(data));
+if (localStorage.getItem("userId") !== "Admin") {
+  fetch("https://localhost:5001/api/RentedFilm")
+    .then((response) => response.json())
+    .then((data) => getRentedMovies(data));
+}
 
 function getRentedMovies(rentedData) {
   var studio = parseInt(localStorage.getItem("userId")) + 1;

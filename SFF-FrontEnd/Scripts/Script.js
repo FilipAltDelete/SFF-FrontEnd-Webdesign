@@ -1,4 +1,3 @@
-console.log("† Jesus Kristus, vår frälsare †");
 console.log(localStorage.getItem("userId"));
 
 var getUser = "";
@@ -24,26 +23,38 @@ function showLoginPage() {
     getUser = document.getElementById("username").value;
     getPass = document.getElementById("userPassword").value;
 
-    fetch("https://localhost:5001/api/FilmStudio")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (json) {
-        console.log(json);
-
-        for (let i = 0; i < json.length; i++) {
-          if (getUser == json[i].name && getPass == json[i].password) {
-            console.log("Rätt");
-            localStorage.setItem("userId", i);
+    if (getUser === "admin" && getPass === "admin1") {
+      localStorage.setItem("userId", "Admin");
+      if (localStorage.getItem("userId") != null) {
+        showWelcomePage(getUser);
+      }
+    } else {
+      fetch("https://localhost:5001/api/FilmStudio")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (json) {
+          console.log("json.length: " + json.length);
+          for (let i = 0; i < json.length; i++) {
+            if (getUser == json[i].name && getPass == json[i].password) {
+              console.log("inne i if: " + json[i].name);
+              console.log("Verified: " + json[i].verified);
+              if (json[i].verified === true) {
+                localStorage.setItem("userId", i);
+                console.log("Rätt");
+              } else {
+                showErrorPage();
+              }
+            }
           }
-        }
 
-        if (localStorage.getItem("userId") != null) {
-          showWelcomePage(getUser);
-        } else {
-          showErrorPage();
-        }
-      });
+          if (localStorage.getItem("userId") != null) {
+            showWelcomePage(getUser);
+          } else {
+            showErrorPage();
+          }
+        });
+    }
   });
 }
 
@@ -52,18 +63,27 @@ function showWelcomePage(getUser) {
   //mainPage.innerHTML = "Welcome " + getUser;
 
   var print = "Welcome ";
+  var localUserId = localStorage.getItem("userId");
 
-  fetch("https://localhost:5001/api/FilmStudio")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      var user = json[localStorage.getItem("userId")].name;
-      print = print + user;
-      mainPage.innerHTML = print;
-      document.getElementById("loggedInStudio").innerHTML =
-        '<a id="loggedInStuido" href="/LoggedInStudio.html">' + user + "</a>";
-    });
+  if (localUserId === "Admin") {
+    mainPage.innerHTML = print;
+    document.getElementById("loggedInStudio").innerHTML =
+      '<a id="loggedInStuido" href="/LoggedInStudio.html">' +
+      localUserId +
+      "</a>";
+  } else {
+    fetch("https://localhost:5001/api/FilmStudio")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        var user = json[localStorage.getItem("userId")].name;
+        print = print + user;
+        mainPage.innerHTML = print;
+        document.getElementById("loggedInStudio").innerHTML =
+          '<a id="loggedInStuido" href="/LoggedInStudio.html">' + user + "</a>";
+      });
+  }
 
   var logoutButton = document.getElementById("signout");
 
